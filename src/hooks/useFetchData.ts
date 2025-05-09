@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Product } from "types/product";
+import { useCallback } from "react";
 
 export function useFetchData(url: string) {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
     try {
       setLoading(true);
       const callPromise = await fetch(url);
@@ -17,11 +18,11 @@ export function useFetchData(url: string) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [url]);
 
   useEffect(() => {
     getData();
-  }, [url]);
+  }, [getData]);
 
   return { products, loading };
 }

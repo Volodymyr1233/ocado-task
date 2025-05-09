@@ -3,9 +3,11 @@ import React from "react";
 import styles from "./ProductList.module.css";
 import { useFetchData } from "hooks/useFetchData";
 import { ProductItem } from "components/ProductItem/ProductItem";
+import { useNavigate } from "react-router-dom";
 
 export function ProductList() {
   const { products, loading } = useFetchData("data/products.json");
+  const navigate = useNavigate();
 
   return (
     <section className={styles.mainContainer}>
@@ -17,6 +19,10 @@ export function ProductList() {
             <ProductItem key={index} product={product} />
           ))}
       </section>
+
+      <button onClick={() => navigate("/cart")} className={styles.goToCartBtn}>
+        Przejdź do koszyka
+      </button>
     </section>
   );
 }
