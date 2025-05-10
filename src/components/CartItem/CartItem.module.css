@@ -1,0 +1,17 @@
+.itemContainer {
+  width: 100%;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  border: 2px dashed burlywood;
+}
+
+.productInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  & h2,
+  p {
+    margin: 0;
+  }
+}

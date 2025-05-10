@@ -7,6 +7,7 @@ export function useFetchData(url: string) {
   const [loading, setLoading] = useState(false);
 
   const getData = useCallback(async () => {
+    console.log("getData call");
     try {
       setLoading(true);
       const callPromise = await fetch(url);

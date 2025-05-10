@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./ProductList.module.css";
 import { useFetchData } from "hooks/useFetchData";
 import { ProductItem } from "components/ProductItem/ProductItem";
