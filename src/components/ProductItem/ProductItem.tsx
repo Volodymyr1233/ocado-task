@@ -11,8 +11,8 @@ export function ProductItem({ product }: ProductItemInterface) {
   const { addCartItem, isProductAddedToCart } = useCartItems();
 
   return (
-    <section className={styles.productItemContainer}>
-      <div className={styles.productItemInfoContainer}>
+    <section className={`itemContainer ${styles.productItemContainer}`}>
+      <div className={`itemInfoContainer`}>
         <h2>Nazwa: {product.name}</h2>
         <p>
           Cena: {product.price.main}.{product.price.fractional}

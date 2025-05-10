@@ -4,17 +4,20 @@ import SummaryPage from "pages/SummaryPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductsPage from "pages/ProductsPage";
 import { CartProvider } from "context/cart-context";
+import { ProductProvider } from "context/product-context";
 
 export default function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<ProductsPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/summary" element={<SummaryPage />} />
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+    <ProductProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ProductsPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/summary" element={<SummaryPage />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
+    </ProductProvider>
   );
 }

@@ -15,8 +15,8 @@ export default function CartItem({ cartItem }: CartItemInterface) {
   } = useCartItems();
 
   return (
-    <section className={styles.cartItemContainer}>
-      <div className={styles.cartItemInfoContainer}>
+    <section className={`itemContainer ${styles.cartItemContainer}`}>
+      <div className={`itemInfoContainer`}>
         <h2>Nazwa: {cartItem.product.name}</h2>
         <p>
           Cena: {cartItem.product.price.main}.
