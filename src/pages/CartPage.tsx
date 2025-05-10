@@ -1,3 +1,4 @@
+import CartList from "components/CartList/CartList";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +7,7 @@ export default function CartPage() {
   return (
     <section>
       <button onClick={() => navigate("/")}>Wróć</button>
-      <h1>Cart page</h1>
+      <CartList />
     </section>
   );
 }

@@ -1,0 +1,36 @@
+.cartItemContainer {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  border: 2px dashed green;
+  align-items: center;
+}
+
+.cartItemInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cartItemCounter {
+  display: flex;
+  align-self: center;
+  gap: 5px;
+}
+
+.cartItemCounterText {
+  font-size: 15px;
+}
+
+.cartItemCounterButton {
+  height: 20px;
+  width: 30px;
+}
+
+.cartItemEndContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}

@@ -1,21 +1,16 @@
-.productListMainContainer {
+.cartListMainContainer {
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.productListContainer {
+.cartItemsContainer {
   width: 80%;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.productListHeaderContainer{
-  font-size: 40px;
-}
-
-.productListGoToCartBtn {
-  margin-top: 15px;
+.cartItemsTotalPrice {
 }
