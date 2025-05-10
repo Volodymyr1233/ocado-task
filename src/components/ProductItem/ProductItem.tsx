@@ -11,14 +11,14 @@ export function ProductItem({ product }: ProductItemInterface) {
   const { addCartItem, isProductAddedToCart } = useCartItems();
 
   return (
-    <section className={styles.itemContainer}>
-      <div className={styles.productInfoContainer}>
+    <section className={styles.productItemContainer}>
+      <div className={styles.productItemInfoContainer}>
         <h2>Nazwa: {product.name}</h2>
         <p>
           Cena: {product.price.main}.{product.price.fractional}
         </p>
       </div>
-      <div className={styles.buttonContainer}>
+      <div className={styles.productItemButtonContainer}>
         {isProductAddedToCart(product.id) ? (
           <p>Produkt dodany</p>
         ) : (

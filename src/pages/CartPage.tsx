@@ -7,7 +7,6 @@ export default function CartPage() {
   return (
     <section>
       <button onClick={() => navigate("/")}>Wróć</button>
-      <h1>Cart page</h1>
       <CartList />
     </section>
   );
