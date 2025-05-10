@@ -19,7 +19,9 @@ export default function CartList() {
       <h2 className={styles.cartItemsTotalPrice}>
         Łączna kwota: {calculateTotalPrice()}
       </h2>
-
+      <button onClick={() => navigate("/summary")}>
+        Przejdz do podsumowania
+      </button>
     </section>
   );
 }
