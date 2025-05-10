@@ -1,16 +1,13 @@
-import { ReactNode, useState, createContext } from "react";
+import { ReactNode, useState, createContext, useEffect } from "react";
 import { CartProduct } from "types/cart-product";
 import { useCallback } from "react";
-import { useFetchData } from "hooks/useFetchData";
+import { useProducts } from "hooks/useProducts";
 
 type CartProvidersProps = {
   children: ReactNode;
 };
 
 type CartContextType = {
-  // getItemsQuantity: (id: number) => number;
-
-  // calculateTotalPrice: () => number;
   addCartItem: (id: number) => void;
   removeCartItem: (id: number) => void;
   isProductAddedToCart: (id: number) => boolean;
@@ -24,9 +21,17 @@ type CartContextType = {
 export const CartContext = createContext({} as CartContextType);
 
 export function CartProvider({ children }: CartProvidersProps) {
-  const [cartItems, setCartItems] = useState<CartProduct[]>([]);
+  const [cartItems, setCartItems] = useState<CartProduct[]>(() => {
+    const savedItems = localStorage.getItem("cartItems");
+    if (savedItems) {
+      const initialArray = JSON.parse(savedItems);
+      return initialArray;
+    }
 
-  const { products } = useFetchData("data/products.json");
+    return [];
+  });
+
+  const { products } = useProducts();
 
   const addCartItem = useCallback(
     (id: number) => {
@@ -104,6 +109,10 @@ export function CartProvider({ children }: CartProvidersProps) {
     );
 
     return Math.round(totalPrice * 100) / 100;
+  }, [cartItems]);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
   return (

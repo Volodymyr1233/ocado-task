@@ -6,7 +6,9 @@ export default function CartPage() {
   const navigate = useNavigate();
   return (
     <section>
-      <button onClick={() => navigate("/")}>Wróć</button>
+      <button onClick={() => navigate("/")} className="backButton">
+        Wróć
+      </button>
       <CartList />
     </section>
   );

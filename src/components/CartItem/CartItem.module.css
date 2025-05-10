@@ -1,17 +1,5 @@
 .cartItemContainer {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  padding: 5px 10px;
-  justify-content: space-between;
   border: 2px dashed green;
-  align-items: center;
-}
-
-.cartItemInfoContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
 }
 
 .cartItemCounter {

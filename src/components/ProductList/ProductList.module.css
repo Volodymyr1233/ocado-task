@@ -1,18 +1,4 @@
-.productListMainContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.productListContainer {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.productListHeaderContainer{
+.productListHeaderContainer {
   font-size: 40px;
 }
 

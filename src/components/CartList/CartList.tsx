@@ -8,18 +8,21 @@ export default function CartList() {
   const navigate = useNavigate();
 
   return (
-    <section className={styles.cartListMainContainer}>
+    <section className={`listMainContainer`}>
       <h1>Koszyk</h1>
-      <section className={styles.cartItemsContainer}>
+      <section className={`listItemsContainer`}>
         {cartItems &&
           cartItems.map((cartItem, index) => (
             <CartsItem key={index} cartItem={cartItem} />
           ))}
       </section>
-      <h2 className={styles.cartItemsTotalPrice}>
+      <h2 className={`listTotalPrice`}>
         Łączna kwota: {calculateTotalPrice()}
       </h2>
-      <button onClick={() => navigate("/summary")}>
+      <button
+        className={styles.cartListSummaryBtn}
+        onClick={() => navigate("/summary")}
+      >
         Przejdz do podsumowania
       </button>
     </section>

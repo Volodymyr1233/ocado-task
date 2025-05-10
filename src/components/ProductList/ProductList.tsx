@@ -1,17 +1,17 @@
 import styles from "./ProductList.module.css";
-import { useFetchData } from "hooks/useFetchData";
 import { ProductItem } from "components/ProductItem/ProductItem";
 import { useNavigate } from "react-router-dom";
+import { useProducts } from "hooks/useProducts";
 
 export function ProductList() {
-  const { products, loading } = useFetchData("data/products.json");
+  const { products, loading } = useProducts();
   const navigate = useNavigate();
 
   return (
-    <section className={styles.productListMainContainer}>
+    <section className={`listMainContainer`}>
       <h1 className={styles.productListHeaderContainer}>Lista produktów</h1>
       {loading && <p>Loading...</p>}
-      <section className={styles.productListContainer}>
+      <section className={`listItemsContainer`}>
         {products &&
           products.map((product, index) => (
             <ProductItem key={index} product={product} />
