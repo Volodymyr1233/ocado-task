@@ -1,0 +1,12 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function CartPage() {
+  const navigate = useNavigate();
+  return (
+    <section>
+      <button onClick={() => navigate("/")}>Wróć</button>
+      <h1>Cart page</h1>
+    </section>
+  );
+}
