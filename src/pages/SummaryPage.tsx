@@ -1,5 +1,13 @@
 import React from "react";
+import SummaryList from "components/SummaryList/SummaryList";
+import { useNavigate } from "react-router-dom";
 
 export default function SummaryPage() {
-  return <h1>Summary Page</h1>;
+  const navigate = useNavigate();
+  return (
+    <section>
+      <button onClick={() => navigate("/cart")}>Wróć</button>
+      <SummaryList />
+    </section>
+  );
 }
