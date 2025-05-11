@@ -25,6 +25,7 @@ export default function ConfirmationList() {
           localStorage.setItem("cartItems", JSON.stringify([]));
           window.location.href = "/";
         }}
+        className="buttonStyle goToNextPageBtn"
       >
         Powrót do produktów
       </button>

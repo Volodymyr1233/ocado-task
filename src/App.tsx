@@ -5,6 +5,7 @@ import ProductsPage from "./pages/ProductsPage";
 import { CartProvider } from "./context/cart-context";
 import { ProductProvider } from "./context/product-context";
 import ConfirmationPage from "./pages/ConfirmationPage";
+import "./App.css";
 
 export default function App() {
   return (
@@ -15,7 +16,6 @@ export default function App() {
             <Route path="/" element={<ProductsPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/summary" element={<SummaryPage />} />
-            <Route path="/confirm" element={<ConfirmationPage />} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

@@ -39,7 +39,10 @@ export default function CartItem({ cartItem }: CartItemInterface) {
         </button>
       </div>
       <div className={styles.cartItemEndContainer}>
-        <button onClick={() => removeCartItem(cartItem.product.id)}>
+        <button
+          onClick={() => removeCartItem(cartItem.product.id)}
+          className="buttonStyle removeFromCartBtn"
+        >
           Usuń z koszyka
         </button>
         <h3>Kwota: {calculateCartItemPrice(cartItem.product.id)}</h3>

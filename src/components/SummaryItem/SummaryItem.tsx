@@ -11,7 +11,7 @@ export function SummaryItem({ cartItem }: SummaryItemInterface) {
 
   return (
     <section className={`itemContainer ${styles.summaryItemContainer}`}>
-      <div className={`itemInfoContainer`}>
+      <div className="itemInfoContainer">
         <h2>Nazwa: {cartItem.product.name}</h2>
         <p>
           Cena: {cartItem.product.price.main}.

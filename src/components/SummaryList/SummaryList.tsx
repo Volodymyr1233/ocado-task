@@ -1,5 +1,4 @@
 import { useCartItems } from "@/hooks/useCartItems";
-import styles from "./SummaryList.module.css";
 import { SummaryItem } from "@/components/SummaryItem/SummaryItem";
 
 export default function SummaryList() {
@@ -18,7 +17,10 @@ export default function SummaryList() {
         Łączna kwota: {calculateTotalPrice()}
       </h2>
 
-      <button onClick={() => (window.location.href = "/confirm")}>
+      <button
+        onClick={() => (window.location.href = "/order.html")}
+        className="buttonStyle goToNextPageBtn"
+      >
         Złóż zamówienie
       </button>
     </section>

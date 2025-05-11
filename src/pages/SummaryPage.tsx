@@ -6,7 +6,7 @@ export default function SummaryPage() {
   const navigate = useNavigate();
   return (
     <section>
-      <button onClick={() => navigate("/cart")} className="backButton">
+      <button onClick={() => navigate("/cart")} className="buttonStyle backBtn">
         Wróć
       </button>
       <SummaryList />

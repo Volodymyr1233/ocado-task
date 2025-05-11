@@ -15,6 +15,7 @@ type CartContextType = {
   decreaseCartQuantity: (id: number) => void;
   calculateCartItemPrice: (id: number) => number;
   calculateTotalPrice: () => number;
+  calculateCartItems: () => number;
   cartItems: CartProduct[];
 };
 
@@ -115,6 +116,10 @@ export function CartProvider({ children }: CartProvidersProps) {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  const calculateCartItems = useCallback(() => {
+    return cartItems.length;
+  }, [cartItems]);
+
   return (
     <CartContext.Provider
       value={{
@@ -125,6 +130,7 @@ export function CartProvider({ children }: CartProvidersProps) {
         decreaseCartQuantity,
         calculateCartItemPrice,
         calculateTotalPrice,
+        calculateCartItems,
         cartItems,
       }}
     >

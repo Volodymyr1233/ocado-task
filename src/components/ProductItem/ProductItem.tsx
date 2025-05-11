@@ -1,4 +1,3 @@
-import React from "react";
 import { Product } from "@/types/product";
 import styles from "./ProductItem.module.css";
 import { useCartItems } from "@/hooks/useCartItems";
@@ -20,9 +19,12 @@ export function ProductItem({ product }: ProductItemInterface) {
       </div>
       <div className={styles.productItemButtonContainer}>
         {isProductAddedToCart(product.id) ? (
-          <p>Produkt dodany</p>
+          <p className={styles.productItemAddedText}>Produkt dodany</p>
         ) : (
-          <button onClick={() => addCartItem(product.id)}>
+          <button
+            onClick={() => addCartItem(product.id)}
+            className="buttonStyle addToCartBtn"
+          >
             Dodaj do koszyka
           </button>
         )}
