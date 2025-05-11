@@ -1,4 +1,4 @@
-# 🛒 Ocado Recruitment Task
+# 🛒 Ocado Recruitment Task (Volodymyr_Haideichuk_Web_Wrocław)
 
 This project was created using **React + Vite** 
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="20" style="vertical-align:middle;"/>
