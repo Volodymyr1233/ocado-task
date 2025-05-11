@@ -109,7 +109,7 @@ export function CartProvider({ children }: CartProvidersProps) {
     );
 
     return Math.round(totalPrice * 100) / 100;
-  }, [cartItems]);
+  }, [cartItems, calculateCartItemPrice]);
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
