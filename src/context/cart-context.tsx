@@ -1,7 +1,7 @@
 import { ReactNode, useState, createContext, useEffect } from "react";
-import { CartProduct } from "types/cart-product";
+import { CartProduct } from "@/types/cart-product";
 import { useCallback } from "react";
-import { useProducts } from "hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
 
 type CartProvidersProps = {
   children: ReactNode;
@@ -15,6 +15,7 @@ type CartContextType = {
   decreaseCartQuantity: (id: number) => void;
   calculateCartItemPrice: (id: number) => number;
   calculateTotalPrice: () => number;
+  calculateCartItems: () => number;
   cartItems: CartProduct[];
 };
 
@@ -109,10 +110,14 @@ export function CartProvider({ children }: CartProvidersProps) {
     );
 
     return Math.round(totalPrice * 100) / 100;
-  }, [cartItems]);
+  }, [cartItems, calculateCartItemPrice]);
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const calculateCartItems = useCallback(() => {
+    return cartItems.length;
   }, [cartItems]);
 
   return (
@@ -125,6 +130,7 @@ export function CartProvider({ children }: CartProvidersProps) {
         decreaseCartQuantity,
         calculateCartItemPrice,
         calculateTotalPrice,
+        calculateCartItems,
         cartItems,
       }}
     >

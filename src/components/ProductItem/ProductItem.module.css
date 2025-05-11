@@ -6,3 +6,8 @@
   display: flex;
   align-items: center;
 }
+
+.productItemAddedText {
+  color: #28a745;
+  font-weight: bold;
+}

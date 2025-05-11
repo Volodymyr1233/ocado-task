@@ -1,12 +1,15 @@
 import { useCartItems } from "@/hooks/useCartItems";
+import styles from "./ConfirmationList.module.css";
 import { SummaryItem } from "@/components/SummaryItem/SummaryItem";
 
-export default function SummaryList() {
+export default function ConfirmationList() {
   const { cartItems, calculateTotalPrice } = useCartItems();
 
   return (
     <section className={`listMainContainer`}>
-      <h1>Podsumowanie</h1>
+      <h1 className={styles.confirmListSuccessHeading}>
+        Zamówienie złożone pomyślnie
+      </h1>
       <section className={`listItemsContainer`}>
         {cartItems &&
           cartItems.map((cartItem, index) => (
@@ -18,10 +21,13 @@ export default function SummaryList() {
       </h2>
 
       <button
-        onClick={() => (window.location.href = "/order.html")}
+        onClick={() => {
+          localStorage.setItem("cartItems", JSON.stringify([]));
+          window.location.href = "/";
+        }}
         className="buttonStyle goToNextPageBtn"
       >
-        Złóż zamówienie
+        Powrót do produktów
       </button>
     </section>
   );

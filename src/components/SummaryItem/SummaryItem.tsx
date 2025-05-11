@@ -1,6 +1,6 @@
 import styles from "./SummaryItem.module.css";
-import { useCartItems } from "hooks/useCartItems";
-import { CartProduct } from "types/cart-product";
+import { useCartItems } from "@/hooks/useCartItems";
+import { CartProduct } from "@/types/cart-product";
 
 interface SummaryItemInterface {
   cartItem: CartProduct;
@@ -11,7 +11,7 @@ export function SummaryItem({ cartItem }: SummaryItemInterface) {
 
   return (
     <section className={`itemContainer ${styles.summaryItemContainer}`}>
-      <div className={`itemInfoContainer`}>
+      <div className="itemInfoContainer">
         <h2>Nazwa: {cartItem.product.name}</h2>
         <p>
           Cena: {cartItem.product.price.main}.

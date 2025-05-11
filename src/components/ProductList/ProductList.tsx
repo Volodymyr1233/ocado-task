@@ -1,15 +1,17 @@
 import styles from "./ProductList.module.css";
-import { ProductItem } from "components/ProductItem/ProductItem";
+import { ProductItem } from "@/components/ProductItem/ProductItem";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
+import { useCartItems } from "@/hooks/useCartItems";
 
 export function ProductList() {
   const { products, loading } = useProducts();
+  const { calculateCartItems } = useCartItems();
   const navigate = useNavigate();
 
   return (
     <section className={`listMainContainer`}>
-      <h1 className={styles.productListHeaderContainer}>Lista produktów</h1>
+      <h1>Lista produktów</h1>
       {loading && <p>Loading...</p>}
       <section className={`listItemsContainer`}>
         {products &&
@@ -20,7 +22,8 @@ export function ProductList() {
 
       <button
         onClick={() => navigate("/cart")}
-        className={styles.productListGoToCartBtn}
+        className={`buttonStyle goToNextPageBtn`}
+        disabled={calculateCartItems() > 0 ? false : true}
       >
         Przejdź do koszyka
       </button>

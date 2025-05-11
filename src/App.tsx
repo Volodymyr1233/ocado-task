@@ -1,10 +1,11 @@
-import React from "react";
-import CartPage from "pages/CartPage";
-import SummaryPage from "pages/SummaryPage";
+import CartPage from "./pages/CartPage";
+import SummaryPage from "./pages/SummaryPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProductsPage from "pages/ProductsPage";
-import { CartProvider } from "context/cart-context";
-import { ProductProvider } from "context/product-context";
+import ProductsPage from "./pages/ProductsPage";
+import { CartProvider } from "./context/cart-context";
+import { ProductProvider } from "./context/product-context";
+import ConfirmationPage from "./pages/ConfirmationPage";
+import "./App.css";
 
 export default function App() {
   return (
