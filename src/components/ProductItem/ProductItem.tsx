@@ -1,7 +1,7 @@
 import React from "react";
-import { Product } from "types/product";
+import { Product } from "@/types/product";
 import styles from "./ProductItem.module.css";
-import { useCartItems } from "hooks/useCartItems";
+import { useCartItems } from "@/hooks/useCartItems";
 
 interface ProductItemInterface {
   product: Product;

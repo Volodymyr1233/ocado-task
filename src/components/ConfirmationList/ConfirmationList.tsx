@@ -1,6 +1,6 @@
-import { useCartItems } from "hooks/useCartItems";
+import { useCartItems } from "@/hooks/useCartItems";
 import styles from "./ConfirmationList.module.css";
-import { SummaryItem } from "components/SummaryItem/SummaryItem";
+import { SummaryItem } from "@/components/SummaryItem/SummaryItem";
 
 export default function ConfirmationList() {
   const { cartItems, calculateTotalPrice } = useCartItems();

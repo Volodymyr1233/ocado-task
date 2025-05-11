@@ -1,7 +1,7 @@
 import { ReactNode, useState, createContext, useEffect } from "react";
-import { CartProduct } from "types/cart-product";
+import { CartProduct } from "@/types/cart-product";
 import { useCallback } from "react";
-import { useProducts } from "hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
 
 type CartProvidersProps = {
   children: ReactNode;

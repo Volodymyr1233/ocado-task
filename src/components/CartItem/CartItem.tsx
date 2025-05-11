@@ -1,6 +1,6 @@
-import { CartProduct } from "types/cart-product";
+import { CartProduct } from "@/types/cart-product";
 import styles from "./CartItem.module.css";
-import { useCartItems } from "hooks/useCartItems";
+import { useCartItems } from "@/hooks/useCartItems";
 
 interface CartItemInterface {
   cartItem: CartProduct;

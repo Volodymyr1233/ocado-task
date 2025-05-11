@@ -1,4 +1,4 @@
-import CartList from "components/CartList/CartList";
+import CartList from "@/components/CartList/CartList";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 

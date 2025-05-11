@@ -1,7 +1,7 @@
 import styles from "./ProductList.module.css";
-import { ProductItem } from "components/ProductItem/ProductItem";
+import { ProductItem } from "@/components/ProductItem/ProductItem";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
 
 export function ProductList() {
   const { products, loading } = useProducts();

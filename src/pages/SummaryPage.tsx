@@ -1,5 +1,5 @@
 import React from "react";
-import SummaryList from "components/SummaryList/SummaryList";
+import SummaryList from "@/components/SummaryList/SummaryList";
 import { useNavigate } from "react-router-dom";
 
 export default function SummaryPage() {

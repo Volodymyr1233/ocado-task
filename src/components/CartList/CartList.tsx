@@ -1,6 +1,6 @@
-import { useCartItems } from "hooks/useCartItems";
+import { useCartItems } from "@/hooks/useCartItems";
 import styles from "./CartList.module.css";
-import CartsItem from "components/CartItem/CartItem";
+import CartsItem from "../../components/CartItem/CartItem";
 import { useNavigate } from "react-router-dom";
 
 export default function CartList() {

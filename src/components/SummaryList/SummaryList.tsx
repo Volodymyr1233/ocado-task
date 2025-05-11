@@ -1,6 +1,6 @@
-import { useCartItems } from "hooks/useCartItems";
+import { useCartItems } from "@/hooks/useCartItems";
 import styles from "./SummaryList.module.css";
-import { SummaryItem } from "components/SummaryItem/SummaryItem";
+import { SummaryItem } from "@/components/SummaryItem/SummaryItem";
 
 export default function SummaryList() {
   const { cartItems, calculateTotalPrice } = useCartItems();

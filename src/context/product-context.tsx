@@ -1,6 +1,6 @@
-import { Product } from "types/product";
+import { Product } from "@/types/product";
 import { createContext, ReactNode } from "react";
-import { useFetchData } from "hooks/useFetchData";
+import { useFetchData } from "@/hooks/useFetchData";
 
 type ProductContextType = {
   products: Product[];

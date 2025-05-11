@@ -1,4 +1,4 @@
-import ConfirmationList from "components/ConfirmationList/ConfirmationList";
+import ConfirmationList from "@/components/ConfirmationList/ConfirmationList";
 
 export default function ConfirmationPage() {
   return (
