@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+# 🛒 Ocado Recruitment Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using **React + Vite** 
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="20" style="vertical-align:middle;"/>
+<img src="https://vitejs.dev/logo.svg" alt="Vite" width="20" style="vertical-align:middle;"/> 
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ⚙️ Setup
 
-### `npm start`
+To run the project locally:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/Volodymyr1233/ocado-task.git
+    ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Navigate to the project folder**
+    ```bash
+    cd ocado-task
+    ```
 
-### `npm test`
+3. **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Run the project**
+    ```bash
+    npm run dev
+    ```
 
-### `npm run build`
+Then open your browser and go to:  
+👉 [http://localhost:5173/ocado-task](http://localhost:5173/ocado-task)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📋 Quick Overview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Approach**
 
-### `npm run eject`
+- List of products is located in:  
+  `public/data/products.json`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- The application uses **two contexts**:
+  - `cart-context`
+  - `product-context`  
+  
+  These contexts are responsible for managing `products` and `cartItems` in a structured way.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `product-context` uses `useFetchData` to fetch product data
+- `useProducts` – to access from `product-context` and display products on the main page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `cart-context` manages `cartItems` and all related functionalities
+  
+-  `useCartItems` hook gives access `cartItems` and functions in components.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-  `products` and `cartItems` are displayed in dedicated React components.
 
-## Learn More
+- There are **two HTML files**:
+  - `index.html` – renders the main page , cart and summary components using `react-router-dom`
+  - `order.html` – renders the confirmation page. This page is **fully loaded** after summary
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The app uses **localStorage** to save items added to cart and show them on order.html
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+### **Assumptions**
+
+1. 🛑 User **can't access the cart page** without adding a product.
+2. 🗑️ If all items are deleted from the cart, **the user can't access the summary page** and is redirected back.
+3. 💾 All cart changes are **saved in localStorage**.
