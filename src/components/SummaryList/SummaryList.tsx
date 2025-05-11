@@ -18,7 +18,7 @@ export default function SummaryList() {
       </h2>
 
       <button
-        onClick={() => (window.location.href = "/order.html")}
+        onClick={() => (window.location.href = "/ocado-task/order.html")}
         className="buttonStyle goToNextPageBtn"
       >
         Złóż zamówienie

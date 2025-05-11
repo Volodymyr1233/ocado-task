@@ -23,7 +23,7 @@ export default function ConfirmationList() {
       <button
         onClick={() => {
           localStorage.setItem("cartItems", JSON.stringify([]));
-          window.location.href = "/";
+          window.location.href = "/ocado-task";
         }}
         className="buttonStyle goToNextPageBtn"
       >
